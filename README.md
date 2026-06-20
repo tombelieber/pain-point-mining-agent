@@ -13,14 +13,14 @@ npm install -g .
 pain-point-mining install --source local
 ```
 
-GitHub install after the standalone repo is pushed:
+GitHub install:
 
 ```bash
 npm install -g github:tombelieber/pain-point-mining-agent
 pain-point-mining install --source npx
 ```
 
-Tracked installer after the Cloudflare Worker is deployed:
+Tracked installer:
 
 ```bash
 curl -fsSL https://pain-point-mining.tomtang3.ai/install.sh | sh
@@ -40,6 +40,17 @@ After install, use the skill in an agent session:
 
 ```text
 Use $pain-point-mining to analyze this real chat history, rank the pain points by frequency x value, and update PRD/E2E docs.
+```
+
+## Agent Skill
+
+This package includes a reusable Claude/Codex-style skill. The CLI installer installs it to both user skill homes by default.
+
+Claude plugin install through [tomstack](https://github.com/tombelieber/tomstack):
+
+```bash
+claude plugin marketplace add tombelieber/tomstack
+claude plugin install pain-point-mining-agent@tomstack
 ```
 
 ## Privacy-Safe Tracking
