@@ -4,6 +4,8 @@ Agent skill for mining real transcripts, chat exports, support tickets, or sessi
 
 The core workflow treats every user message as a demand signal, clusters the signals, ranks them by `frequency x PM value`, and pins the golden pain point that should drive product build order.
 
+Distribution is GitHub-first. The tracked installer is the primary install path; GitHub/npx commands are the fallback for environments that prefer npm tooling without requiring an npm registry package.
+
 ## Install
 
 Local development install:
@@ -13,12 +15,19 @@ npm install -g .
 pain-point-mining install --source local
 ```
 
-GitHub install:
+This installs the bundled skill to both user skill homes by default:
+
+- Codex: `~/.codex/skills/pain-point-mining`
+- Claude: `~/.claude/skills/pain-point-mining`
+
+GitHub install fallback:
 
 ```bash
 npm install -g github:tombelieber/pain-point-mining-agent
 pain-point-mining install --source npx
 ```
+
+The tracked installer is the preferred public install path because it installs the CLI, installs the bundled skill, and gives a privacy-safe install count. The GitHub path is useful when `curl | sh` is blocked or when an agent wants to run through npm tooling without requiring an npm registry publish.
 
 Tracked installer:
 
@@ -32,6 +41,7 @@ curl -fsSL https://pain-point-mining.tomtang3.ai/install.sh | sh
 pain-point-mining --help
 pain-point-mining skill-path
 pain-point-mining install
+pain-point-mining install --target codex
 pain-point-mining install --target claude
 pain-point-mining install --target both
 ```
@@ -44,13 +54,27 @@ Use $pain-point-mining to analyze this real chat history, rank the pain points b
 
 ## Agent Skill
 
-This package includes a reusable Claude/Codex-style skill. The CLI installer installs it to both user skill homes by default.
+This package includes a reusable Codex/Claude-style skill. The CLI installer installs it to both user skill homes by default.
+
+Codex setup:
+
+```bash
+curl -fsSL https://pain-point-mining.tomtang3.ai/install.sh | sh
+# or, after npm/GitHub install:
+pain-point-mining install --target codex
+```
 
 Claude plugin install through [tomstack](https://github.com/tombelieber/tomstack):
 
 ```bash
 claude plugin marketplace add tombelieber/tomstack
 claude plugin install pain-point-mining-agent@tomstack
+```
+
+The CLI installer also supports direct Claude user-skill install:
+
+```bash
+pain-point-mining install --target claude
 ```
 
 ## Privacy-Safe Tracking
