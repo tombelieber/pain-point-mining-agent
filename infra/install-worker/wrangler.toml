@@ -1,0 +1,13 @@
+name = "pain-point-mining-agent-install-worker"
+main = "src/index.mjs"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+routes = [
+  { pattern = "pain-point-mining.tomtang3.ai", custom_domain = true }
+]
+
+[vars]
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/tombelieber/pain-point-mining-agent/main"
+REPOSITORY_URL = "https://github.com/tombelieber/pain-point-mining-agent"

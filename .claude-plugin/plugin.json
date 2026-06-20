@@ -1,0 +1,9 @@
+{
+  "name": "pain-point-mining-agent",
+  "description": "Mine real transcripts into weighted product pain points, PRD updates, and E2E requirements",
+  "version": "0.1.0",
+  "author": {
+    "name": "tombelieber"
+  },
+  "repository": "https://github.com/tombelieber/pain-point-mining-agent"
+}

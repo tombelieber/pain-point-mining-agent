@@ -1,0 +1,16 @@
+{
+  "name": "pain-point-mining-agent",
+  "owner": {
+    "name": "tombelieber"
+  },
+  "plugins": [
+    {
+      "name": "pain-point-mining-agent",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/tombelieber/pain-point-mining-agent.git"
+      },
+      "description": "Mine real transcripts into weighted product pain points and product requirements"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+*.tgz
+.DS_Store
+.env
+.env.*
+npm-debug.log*
+
+# Keep public OSS history focused on shipped tool artifacts.
+AGENTS.md
+.codex/
+.claude/
+docs/plans/
+docs/internal/

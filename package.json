@@ -1,0 +1,51 @@
+{
+  "name": "pain-point-mining-agent",
+  "version": "0.1.0",
+  "description": "Agent skill for mining real transcripts into weighted product pain points, PRDs, and E2E requirements.",
+  "bin": {
+    "pain-point-mining": "bin/pain-point-mining.mjs"
+  },
+  "scripts": {
+    "check": "node --check bin/pain-point-mining.mjs && node --check lib/*.mjs && node --check test/*.mjs && node --check infra/install-worker/src/index.mjs && node --test",
+    "test": "node --test",
+    "pack:dry": "npm pack --dry-run --json"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "skills/",
+    ".claude-plugin/",
+    "agents/",
+    "install.sh",
+    "infra/install-worker/package.json",
+    "infra/install-worker/package-lock.json",
+    "infra/install-worker/src/",
+    "infra/install-worker/wrangler.toml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "agent-skill",
+    "codex",
+    "claude-code",
+    "product-management",
+    "pain-point-mining",
+    "transcript-analysis",
+    "e2e-tests",
+    "prd",
+    "ai-agent"
+  ],
+  "homepage": "https://github.com/tombelieber/pain-point-mining-agent#readme",
+  "bugs": {
+    "url": "https://github.com/tombelieber/pain-point-mining-agent/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tombelieber/pain-point-mining-agent.git"
+  },
+  "author": "tombelieber",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
